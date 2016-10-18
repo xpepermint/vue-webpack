@@ -1,6 +1,6 @@
 {
   "name": "vue-webpack",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Webpack configuration object generator for Vue.js.",
   "main": "./src/index.js",
   "ava": {
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xpepermint/vue-webpackjs.git"
+    "url": "git+https://github.com/xpepermint/vue-webpack.git"
   },
   "bugs": {
-    "url": "https://github.com/xpepermint/vue-webpackjs/issues"
+    "url": "https://github.com/xpepermint/vue-webpack/issues"
   },
-  "homepage": "https://github.com/xpepermint/vue-webpackjs#readme",
+  "homepage": "https://github.com/xpepermint/vue-webpack#readme",
   "keywords": [
     "vue",
     "webpack",
