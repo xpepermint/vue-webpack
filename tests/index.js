@@ -10,7 +10,7 @@ test('build', async (t) => {
   t.is(config.devtool, '#source-map');
   t.is(config.module.rules.length, 5);
   t.is(config.entry.length, 2);
-  t.is(config.output.filename, 'bundle');
+  t.is(config.output.filename, 'bundle.js');
   t.is(config.output.publicPath, '/');
   t.is(config.output.libraryTarget, 'var');
   t.is(config.plugins.length, 4);
