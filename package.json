@@ -1,6 +1,6 @@
 {
   "name": "vue-webpack",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Webpack configuration object generator for Vue.js.",
   "main": "./src/index.js",
   "ava": {
