@@ -74,15 +74,10 @@ function getEntry({entryFilePath, hotReload}) {
 
 function getOutput({isServer, outputPath, outputFileName, publicPath}={}) {
   let fileName = outputFileName.substr(0, outputFileName.lastIndexOf("."));
-  let fileExt = outputFileName.substr(outputFileName.lastIndexOf(".") + 1);
-
-  if (publicPath.split('').reverse()[0] !== '/') {
-    publicPath+= '/';
-  }
 
   return {
     path: path.resolve(outputPath),
-    filename: outputFileName,
+    filename: `${fileName}.js`,
     publicPath,
     libraryTarget: isServer ? 'commonjs2' : 'var'
   };
