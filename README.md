@@ -1,8 +1,10 @@
 ![Build Status](https://travis-ci.org/xpepermint/vue-webpack.svg?branch=master)&nbsp;[![NPM Version](https://badge.fury.io/js/contextable.svg)](https://badge.fury.io/js/contextable)&nbsp;[![Dependency Status](https://gemnasium.com/xpepermint/vue-webpack.svg)](https://gemnasium.com/xpepermint/vue-webpack)
 
-# [vue](http://vuejs.org)-[webpack](https://webpack.github.io) <img src="logo.png" height="28" />
+# [vue](http://vuejs.org)-[webpack](https://webpack.github.io)
 
 > Webpack configuration object generator for Vue.js.
+
+<img src="logo.png" height="60" style="margin-bottom: 20px" />
 
 [Webpack](https://webpack.github.io) is one of the leading module bundlers these days, but many developers still find the setup to be very complicated. [Vue.js](http://vuejs.org) on the other hand is simple, but probably the hardest part represents the [Webpack](https://webpack.github.io) configuration.
 
