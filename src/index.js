@@ -73,7 +73,7 @@ function getEntry({entryFilePath, hotReload}) {
 */
 
 function getOutput({isServer, outputPath, outputFileName, publicPath}={}) {
-  let fileName = outputFileName.indexOf(".") !== -1 ? outputFileName.substr(0, outputFileName.lastIndexOf(".")) : fileName;
+  let fileName = outputFileName.indexOf(".") !== -1 ? outputFileName.substr(0, outputFileName.lastIndexOf(".")) : outputFileName;
 
   return {
     path: path.resolve(outputPath),
@@ -89,7 +89,7 @@ function getOutput({isServer, outputPath, outputFileName, publicPath}={}) {
 
 function getPlugins({env, mode, splitStyle, uglify, minify, hotReload, outputFileName}={}) {
   let isDev = env.toLowerCase() === 'development';
-  let fileName = outputFileName.indexOf(".") !== -1 ? outputFileName.substr(0, outputFileName.lastIndexOf(".")) : fileName;
+  let fileName = outputFileName.indexOf(".") !== -1 ? outputFileName.substr(0, outputFileName.lastIndexOf(".")) : outputFileName;
 
   let plugins = [
     new webpack.DefinePlugin({
