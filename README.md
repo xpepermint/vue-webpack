@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/xpepermint/vue-webpack.svg?branch=master)&nbsp;[![NPM Version](https://badge.fury.io/js/contextable.svg)](https://badge.fury.io/js/contextable)&nbsp;[![Dependency Status](https://gemnasium.com/xpepermint/vue-webpack.svg)](https://gemnasium.com/xpepermint/vue-webpack)
+![Build Status](https://travis-ci.org/xpepermint/vue-webpack.svg?branch=master)&nbsp;[![NPM Version](https://badge.fury.io/js/vue-webpack.svg)](https://badge.fury.io/js/vue-webpack)&nbsp;[![Dependency Status](https://gemnasium.com/xpepermint/vue-webpack.svg)](https://gemnasium.com/xpepermint/vue-webpack)
 
 # [vue](http://vuejs.org)-[webpack](https://webpack.github.io)
 
