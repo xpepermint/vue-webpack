@@ -62,7 +62,7 @@ const config = build({
 | inputRootPath | String | No | `inputFilePath` folder | The absolute path to the Vue.js application's root directory.
 | env | String | No | development | The environment name (use `deveoplent` or `production`). This value can also be set through the `process.env.NODE_ENV` environment variable.
 | hotReload | Boolean | No | true when `env=development`, otherwise always false | If set to `true` then Webpack's hot-reload function is included.
-| manifest | Boolean | No | true | When set tot `true`, the manifest files is created.
+| manifest | Boolean | No | false | When set tot `true`, the manifest files is created.
 | minify | Boolean | No | false when `env=development`, otherwise true | If set to `true` then CSS code is minified.
 | mode | String | No | client | Vue.js application mode (use `server` or `client`). This value can also be set through the `process.env.VUE_ENV` environment variable.
 | outputFileName | String | No | bundle | The name of the bundle file (e.g. bundle.js).

@@ -157,7 +157,7 @@ exports.build = function ({
   inputFilePath,
   env='development',
   hotReload,
-  manifest=true,
+  manifest=false,
   minify,
   mode='browser',
   outputFileName='bundle',
