@@ -5,7 +5,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const cssNext = require('postcss-cssnext');
 
 /*
-* Returns module object.
+* Returns a modules object.
 */
 
 function getModules() {
@@ -54,7 +54,7 @@ function getModules() {
 }
 
 /*
-* Returns entry object.
+* Returns an entry object.
 */
 
 function getEntry({inputFilePath, hotReload}) {
@@ -70,7 +70,7 @@ function getEntry({inputFilePath, hotReload}) {
 }
 
 /*
-* Returns output object.
+* Returns an output object.
 */
 
 function getOutput({isServer, outputPath, outputFileName, publicPath}={}) {
@@ -87,7 +87,7 @@ function getOutput({isServer, outputPath, outputFileName, publicPath}={}) {
 }
 
 /*
-* Returns plugins object.
+* Returns a plugins object.
 */
 
 function getPlugins({env, mode, manifest, splitStyle, uglify, minify, hotReload, outputFileName, inputFilePath}={}) {
@@ -157,9 +157,9 @@ exports.build = function ({
   inputFilePath,
   env='development',
   hotReload,
-  manifest=false,
+  manifest=true,
   minify,
-  mode='browser',
+  mode='client',
   outputFileName='bundle',
   outputPath,
   publicPath='/',
