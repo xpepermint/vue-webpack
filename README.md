@@ -22,7 +22,7 @@ This is an open source package for [Vue.js](http://vuejs.org/). The source code 
 Run the command below to install the package.
 
 ```
-$ npm install --save-dev vue-webpack babel-core babel-loader babel-preset-es2015 babel-preset-stage-2 css-loader extract-text-webpack-plugin@2.0.0-beta.4 postcss-cssnext vue-loader webpack@2.1.0-beta.25 webpack-hot-middleware
+$ npm install --save-dev vue-webpack vue vuex babel-core babel-loader babel-preset-es2015 babel-preset-stage-2 css-loader file-loader extract-text-webpack-plugin@2.0.0-beta.4 postcss-cssnext vue-loader webpack@2.1.0-beta.25 webpack-hot-middleware webpack-manifest-plugin
 ```
 
 Create the `./.babelrc` and configure the presets.
@@ -59,7 +59,7 @@ const config = build({
 | Option | Type | Required | Default | Description
 |--------|------|----------|---------|------------
 | inputFilePath | String | Yes | - | The absolute path to Vue.js entry file (make sure that you set the right entry file based on `mode`).
-| inputRootPath | String | No | - | The absolute path to the Vue.js application's root directory. When this options is set, the directory structure is presevered (e.g. image and font files) otherwise all files are saved directly to the output folder.
+| inputRootPath | String | No | `inputFilePath` folder | The absolute path to the Vue.js application's root directory.
 | env | String | No | development | The environment name (use `deveoplent` or `production`). This value can also be set through the `process.env.NODE_ENV` environment variable.
 | hotReload | Boolean | No | true when `env=development`, otherwise always false | If set to `true` then Webpack's hot-reload function is included.
 | manifest | Boolean | No | true | When set tot `true`, the manifest files is created.

@@ -187,8 +187,12 @@ exports.build = function ({
     hotReload = false;
   }
 
+  if (!inputRootPath) {
+    inputRootPath = path.dirname(inputFilePath);
+  }
+
   return {
-    context: inputRootPath ? path.resolve(inputRootPath) : undefined,
+    context: path.resolve(inputRootPath),
     target: isServer ? 'node' : 'web',
     devtool: !isServer && isDev ? '#source-map' : false,
     module: getModules(),
