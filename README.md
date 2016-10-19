@@ -15,7 +15,7 @@ This is an open source package for [Vue.js](http://vuejs.org/). The source code 
 ## Related Projects
 
 * [vue-builder](https://github.com/xpepermint/vue-builder): Server-side and client-side rendering for Vue.js.
-* [express-vue-ssr](https://github.com/xpepermint/express-vue-ssr): Vue.js server-side and client-side rendering middleware for Express.js.
+* [express-vue-builder](https://github.com/xpepermint/express-vue-builder): Vue.js server-side and client-side rendering middleware for Express.js.
 
 ## Install
 
