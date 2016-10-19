@@ -6,7 +6,6 @@ test('build', async (t) => {
     inputFilePath: './assets/entry.js',
     outputPath: '../dist'
   });
-  t.is(config.context, undefined);
   t.is(config.target, 'web');
   t.is(config.devtool, '#source-map');
   t.is(config.module.rules.length, 5);
