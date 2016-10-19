@@ -22,7 +22,7 @@ This is an open source package for [Vue.js](http://vuejs.org/). The source code 
 Run the command below to install the package.
 
 ```
-$ npm install --save-dev vue-webpack babel-core babel-loader babel-preset-es2015 babel-preset-stage-2 css-loader extract-text-webpack-plugin@2.0.0-beta.4 postcss-cssnext vue-loader webpack@2.1.0-beta.25
+$ npm install --save-dev vue-webpack babel-core babel-loader babel-preset-es2015 babel-preset-stage-2 css-loader extract-text-webpack-plugin@2.0.0-beta.4 postcss-cssnext vue-loader webpack@2.1.0-beta.25 webpack-hot-middleware
 ```
 
 Create the `./.babelrc` and configure the presets.
@@ -44,7 +44,7 @@ import {build} from 'vue-webpack';
 const config = build({
   env: 'development',
   mode: 'server',
-  entryFilePath: './src/client/server-entry.js',
+  inputFilePath: './src/client/server-entry.js',
   outputFileName: 'bundle',
   outputPath: './dist'
 }); // -> Webpack configuration object suitable for rendering Vue.js applications.
@@ -58,9 +58,11 @@ const config = build({
 
 | Option | Type | Required | Default | Description
 |--------|------|----------|---------|------------
-| entryFilePath | String | Yes | - | The absolute path to Vue.js entry file (make sure that you set the right entry file based on `mode`).
+| inputFilePath | String | Yes | - | The absolute path to Vue.js entry file (make sure that you set the right entry file based on `mode`).
+| inputRootPath | String | No | - | The absolute path to the Vue.js application's root directory. When this options is set, the directory structure is presevered (e.g. image and font files) otherwise all files are saved directly to the output folder.
 | env | String | No | development | The environment name (use `deveoplent` or `production`). This value can also be set through the `process.env.NODE_ENV` environment variable.
 | hotReload | Boolean | No | true when `env=development`, otherwise always false | If set to `true` then Webpack's hot-reload function is included.
+| manifest | Boolean | No | true | When set tot `true`, the manifest files is created.
 | minify | Boolean | No | false when `env=development`, otherwise true | If set to `true` then CSS code is minified.
 | mode | String | No | client | Vue.js application mode (use `server` or `client`). This value can also be set through the `process.env.VUE_ENV` environment variable.
 | outputFileName | String | No | bundle | The name of the bundle file (e.g. bundle.js).

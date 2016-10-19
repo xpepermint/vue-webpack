@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ManifestPlugin = require('webpack-manifest-plugin');
 const cssNext = require('postcss-cssnext');
 
 /*
@@ -37,14 +38,14 @@ function getModules() {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file',
       options: {
-        name: '[name].[ext]?[hash]'
+        name: `[path][name].[ext]?[hash]`
       }
     },
     {
       test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
       loader: 'file',
       query: {
-        name: '[name].[ext]?[hash]'
+        name: `[path][name].[ext]?[hash]`
       }
     }
   ];
@@ -56,9 +57,9 @@ function getModules() {
 * Returns entry object.
 */
 
-function getEntry({entryFilePath, hotReload}) {
+function getEntry({inputFilePath, hotReload}) {
   let paths = [
-    path.resolve(entryFilePath)
+    path.resolve(inputFilePath)
   ];
 
   if (hotReload) {
@@ -79,7 +80,7 @@ function getOutput({isServer, outputPath, outputFileName, publicPath}={}) {
 
   return {
     path: path.resolve(outputPath),
-    filename: `${fileName}.js`,
+    filename: `${fileName}.js?[hash]`,
     publicPath,
     libraryTarget: isServer ? 'commonjs2' : 'var'
   };
@@ -89,7 +90,7 @@ function getOutput({isServer, outputPath, outputFileName, publicPath}={}) {
 * Returns plugins object.
 */
 
-function getPlugins({env, mode, splitStyle, uglify, minify, hotReload, outputFileName}={}) {
+function getPlugins({env, mode, manifest, splitStyle, uglify, minify, hotReload, outputFileName, inputFilePath}={}) {
   let isDev = env.toLowerCase() === 'development';
 
   let fileName = outputFileName.indexOf(".") !== -1
@@ -103,9 +104,15 @@ function getPlugins({env, mode, splitStyle, uglify, minify, hotReload, outputFil
     }),
   ];
 
+  if (manifest) {
+    plugins.push(
+      new ManifestPlugin({fileName: `${fileName}.json`})
+    );
+  }
+
   if (splitStyle) {
     plugins.push(
-      new ExtractTextPlugin(`${fileName}.css`)
+      new ExtractTextPlugin(`${fileName}.css?[hash]`)
     );
   }
 
@@ -146,9 +153,11 @@ function getPlugins({env, mode, splitStyle, uglify, minify, hotReload, outputFil
 */
 
 exports.build = function ({
-  entryFilePath,
+  inputRootPath=null,
+  inputFilePath,
   env='development',
   hotReload,
+  manifest=true,
   minify,
   mode='browser',
   outputFileName='bundle',
@@ -157,7 +166,7 @@ exports.build = function ({
   splitStyle=true,
   uglify
 }={}) {
-  if (!entryFilePath) throw new Error('entryFilePath is a required option')
+  if (!inputFilePath) throw new Error('inputFilePath is a required option')
   if (!outputPath) throw new Error('outputPath is a required option')
 
   const isDev = env.toLowerCase() === 'development';
@@ -179,11 +188,12 @@ exports.build = function ({
   }
 
   return {
+    context: inputRootPath ? path.resolve(inputRootPath) : undefined,
     target: isServer ? 'node' : 'web',
     devtool: !isServer && isDev ? '#source-map' : false,
     module: getModules(),
-    entry: getEntry({entryFilePath, hotReload}),
+    entry: getEntry({inputFilePath, hotReload}),
     output: getOutput({isServer, outputPath, outputFileName, publicPath}),
-    plugins: getPlugins({env, mode, splitStyle, uglify, minify, hotReload, outputFileName})
+    plugins: getPlugins({env, mode, manifest, splitStyle, uglify, minify, hotReload, outputFileName})
   };
 }
