@@ -1,6 +1,6 @@
 {
   "name": "vue-webpack",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "description": "Webpack configuration object generator for Vue.js.",
   "main": "./src/index.js",
   "ava": {
@@ -42,7 +42,7 @@
     "webpack": "^2.1.0-beta.25",
     "webpack-manifest-plugin": "1.0.1"
   },
-  "pearDependencies": {
+  "peerDependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
