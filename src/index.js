@@ -161,13 +161,12 @@ exports.build = function ({
   minify,
   mode='client',
   outputFileName='bundle',
-  outputPath,
+  outputPath='./dist',
   publicPath='/',
   splitStyle=true,
   uglify
 }={}) {
   if (!inputFilePath) throw new Error('inputFilePath is a required option')
-  if (!outputPath) throw new Error('outputPath is a required option')
 
   const isDev = env.toLowerCase() === 'development';
   const isServer = mode.toLowerCase() === 'server';

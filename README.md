@@ -58,15 +58,15 @@ const config = build({
 
 | Option | Type | Required | Default | Description
 |--------|------|----------|---------|------------
-| inputFilePath | String | Yes | - | The absolute path to Vue.js entry file (make sure that you set the right entry file based on `mode`).
-| inputRootPath | String | No | `inputFilePath` folder | The absolute path to the Vue.js application's root directory.
+| inputFilePath | String | Yes | - | The path to Vue.js entry file (make sure that you set the right entry file based on `mode`).
+| inputRootPath | String | No | `inputFilePath` folder | The path to the Vue.js application's root directory.
 | env | String | No | development | The environment name (use `deveoplent` or `production`). This value can also be set through the `process.env.NODE_ENV` environment variable.
 | hotReload | Boolean | No | true when `env=development`, otherwise always false | If set to `true` then Webpack's hot-reload function is included.
 | manifest | Boolean | No | false | When set tot `true`, the manifest files is created.
 | minify | Boolean | No | false when `env=development`, otherwise true | If set to `true` then CSS code is minified.
 | mode | String | No | client | Vue.js application mode (use `server` or `client`). This value can also be set through the `process.env.VUE_ENV` environment variable.
 | outputFileName | String | No | bundle | The name of the bundle file (e.g. bundle.js).
-| outputPath | String | Yes | - | The absolute path to the output folder.
+| outputPath | String | No | ./dist | The path to the output folder.
 | publicPath | String | No | / | The public path for the assets (e.g. if set to `/assets` then files are available at http://domain.com/assets). This variable should only be set when building a configuration object for a client.
 | splitStyle | Boolean | No | true | When set to `true`, javascript and css code are stored into separated files.
 | uglify | Boolean | No | false when `env=development`, otherwise true | If set to `true` then Javascript code is minified.
