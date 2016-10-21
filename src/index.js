@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ManifestPlugin = require('webpack-manifest-plugin');
+const InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
 const cssNext = require('postcss-cssnext');
 
 /*
@@ -98,10 +99,11 @@ function getPlugins({env, mode, manifest, splitStyle, uglify, minify, hotReload,
     : outputFileName;
 
   let plugins = [
+    new InlineEnviromentVariablesPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env),
       'process.env.VUE_ENV': JSON.stringify(mode)
-    }),
+    })
   ];
 
   if (manifest) {

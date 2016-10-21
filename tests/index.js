@@ -13,5 +13,5 @@ test('build', async (t) => {
   t.is(config.output.filename, 'bundle.js?[hash]');
   t.is(config.output.publicPath, '/');
   t.is(config.output.libraryTarget, 'var');
-  t.is(config.plugins.length, 5);
+  t.is(config.plugins.length, 6);
 });
