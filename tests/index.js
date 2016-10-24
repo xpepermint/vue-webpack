@@ -7,7 +7,7 @@ test('build', async (t) => {
     outputPath: '../dist'
   });
   t.is(config.target, 'web');
-  t.is(config.devtool, '#source-map');
+  t.is(config.devtool, '#eval-source-map');
   t.is(config.module.rules.length, 5);
   t.is(config.entry.length, 2);
   t.is(config.output.filename, 'bundle.js?[hash]');
