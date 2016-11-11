@@ -60,6 +60,7 @@ function getModules() {
 
 function getEntry({inputFilePath, hotReload}) {
   let paths = [
+    'babel-polyfill',
     path.resolve(inputFilePath)
   ];
 

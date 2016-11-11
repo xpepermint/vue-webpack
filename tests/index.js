@@ -9,7 +9,7 @@ test('build', async (t) => {
   t.is(config.target, 'web');
   t.is(config.devtool, '#eval-source-map');
   t.is(config.module.rules.length, 5);
-  t.is(config.entry.length, 2);
+  t.is(config.entry.length, 3);
   t.is(config.output.filename, 'bundle.js?[hash]');
   t.is(config.output.publicPath, '/');
   t.is(config.output.libraryTarget, 'var');
