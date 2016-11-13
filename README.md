@@ -23,20 +23,19 @@ This is an open source package for [Vue.js](http://vuejs.org/). The source code 
 
 ## Install
 
-Run the command below to install the package (make sure that you also install the required peer dependencies).
+Run the command below to install the package with all required peer dependencies.
 
 ```
-$ npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-stage-3 babel-polyfill css-loader extract-text-webpack-plugin@2.0.0-beta.4 file-loader inline-environment-variables-webpack-plugin postcss-cssnext vue-loader webpack@2.1.0-beta.25 webpack-hot-middleware webpack-manifest-plugin
+$ npm install --save-dev babel-core babel-loader babel-polyfill babel-preset-es2015 css-loader extract-text-webpack-plugin@2.0.0-beta.4 inline-environment-variables-webpack-plugin file-loader postcss-cssnext vue-loader webpack@2.1.0-beta.25 webpack-hot-middleware webpack-manifest-plugin
 $ npm install --save-dev vue-webpack
 ```
 
-Create the `./.babelrc` and configure the presets.
+Create a new file `./.babelrc` and configure the presets.
 
 ```js
 {
   "presets": [
-    ["es2015"],
-    "stage-3"
+    "es2015"
   ]
 }
 ```
