@@ -13,7 +13,7 @@ function getModules() {
   let rules = [
     {
       test: /\.vue$/,
-      loader: 'vue',
+      loader: 'vue-loader',
       options: {
         postcss: [
           cssNext()
@@ -28,23 +28,23 @@ function getModules() {
     },
     {
       test: /\.js$/,
-      loader: 'babel',
+      loader: 'babel-loader',
       exclude: /node_modules/
     },
     {
       test: /\.json$/,
-      loader: 'json'
+      loader: 'json-loader'
     },
     {
       test: /\.(png|jpg|gif|svg)$/,
-      loader: 'file',
+      loader: 'file-loader',
       options: {
         name: `[path][name].[ext]?[hash]`
       }
     },
     {
       test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-      loader: 'file',
+      loader: 'file-loader',
       query: {
         name: `[path][name].[ext]?[hash]`
       }
