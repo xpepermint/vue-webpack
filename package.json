@@ -45,6 +45,7 @@
     "file-loader": "^0.9.0",
     "inline-environment-variables-webpack-plugin": "^1.1.0",
     "postcss-cssnext": "^2.8.0",
+    "postcss-import": "8.1.0",
     "vue-loader": "^10.0.0",
     "vue-template-compiler": "^2.1.0",
     "webpack": "^2.1.0-beta.27",
@@ -53,8 +54,8 @@
   },
   "peerDependencies": {
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
-    "inline-environment-variables-webpack-plugin": "^1.1.0",
     "file-loader": "^0.9.0",
+    "inline-environment-variables-webpack-plugin": "^1.1.0",
     "postcss-cssnext": "^2.8.0",
     "vue-loader": "^10.0.0",
     "webpack": "^2.1.0-beta.27",
