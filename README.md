@@ -2,7 +2,7 @@
 
 > Webpack configuration object generator for Vue.js.
 
-**DEPRECATED WARNING: This package is not maintained any more since it's difficult to say what configuration is right for every Vue.js project.**
+**DEPRECATED WARNING: This package is not maintained any more since it's difficult to say what configuration is right for every Vue.js project. See the [vue-example](https://github.com/xpepermint/vue-example/) on how to setup your Vue.js project.**
 
 <img src="logo.png" height="60" style="margin-bottom: 20px" />
 
