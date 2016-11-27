@@ -1,8 +1,8 @@
-![Build Status](https://travis-ci.org/xpepermint/vue-webpack.svg?branch=master)&nbsp;[![NPM Version](https://badge.fury.io/js/vue-webpack.svg)](https://badge.fury.io/js/vue-webpack)&nbsp;[![Dependency Status](https://gemnasium.com/xpepermint/vue-webpack.svg)](https://gemnasium.com/xpepermint/vue-webpack)
-
 # [vue](http://vuejs.org)-[webpack](https://webpack.github.io)
 
 > Webpack configuration object generator for Vue.js.
+
+**DEPRECATED WARNING: This package is not maintained any more since it's difficult to say what configuration is right for every Vue.js project.**
 
 <img src="logo.png" height="60" style="margin-bottom: 20px" />
 
