@@ -20,7 +20,7 @@ function getModules() {
         ],
         loaders: {
           css: ExtractTextPlugin.extract({
-            loader: `css-loader`,
+            loader: `css-loader?sourceMap`,
             fallbackLoader: 'vue-style-loader'
           })
         }
@@ -196,7 +196,7 @@ exports.build = function ({
   return {
     context: path.resolve(inputRootPath),
     target: isServer ? 'node' : 'web',
-    devtool: !isServer && isDev ? '#eval-source-map' : false,
+    devtool: !isServer && isDev ? '#source-map' : false,
     module: getModules(),
     entry: getEntry({inputFilePath, hotReload}),
     output: getOutput({isServer, outputPath, outputFileName, publicPath}),
