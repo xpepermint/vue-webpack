@@ -4,6 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ManifestPlugin = require('webpack-manifest-plugin');
 const InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
 const cssNext = require('postcss-cssnext');
+const postcssImport = require('postcss-import');
 
 /*
 * Returns a modules object.
@@ -16,6 +17,7 @@ function getModules() {
       loader: 'vue-loader',
       options: {
         postcss: [
+          postcssImport(),
           cssNext()
         ],
         loaders: {
